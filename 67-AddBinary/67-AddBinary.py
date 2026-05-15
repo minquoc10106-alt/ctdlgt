@@ -1,4 +1,4 @@
-# Last updated: 5/15/2026, 10:09:31 AM
+# Last updated: 5/15/2026, 10:09:41 AM
 1class Solution(object):
 2    def mySqrt(self, x):
 3        if x < 2:
