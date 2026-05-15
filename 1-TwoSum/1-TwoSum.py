@@ -1,14 +1,17 @@
-# Last updated: 5/15/2026, 9:46:15 AM
+# Last updated: 5/15/2026, 9:49:57 AM
 1class Solution(object):
-2    def twoSum(self, nums, target):
-3        # Create a dictionary to store the value and its index
-4
-5        prevMap = {} 
-6
-7        for i, n in enumerate(nums):
-8            diff = target - n
-9
-10            if diff in prevMap:
-11                return [prevMap[diff], i]
-12
-13            prevMap[n] = i
+2    def longestCommonPrefix(self, danh_sach_chuoi):
+3        """
+4        :type danh_sach_chuoi: List[str]
+5        :rtype: str
+6        """
+7        if not danh_sach_chuoi:
+8            return ""
+9        tien_to = danh_sach_chuoi[0]
+10        for i in range(1, len(danh_sach_chuoi)):
+11            chuoi_hien_tai = danh_sach_chuoi[i]
+12            while not chuoi_hien_tai.startswith(tien_to):
+13                tien_to = tien_to[:-1]
+14                if not tien_to:
+15                    return ""       
+16        return tien_to
