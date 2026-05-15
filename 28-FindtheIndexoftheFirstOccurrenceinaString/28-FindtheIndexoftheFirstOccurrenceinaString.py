@@ -1,9 +1,14 @@
-# Last updated: 5/15/2026, 9:57:47 AM
+# Last updated: 5/15/2026, 9:58:16 AM
 1class Solution(object):
-2    def strStr(self, nguon, mau):
-3        n = len(nguon)
-4        m = len(mau)
-5        for i in range(n - m + 1):
-6            if nguon[i : i + m] == mau:
-7                return i 
-8        return -1
+2    def searchInsert(self, mang, tieu_chau):
+3        trai = 0
+4        phai = len(mang) - 1
+5        while trai <= phai:
+6            giua = (trai + phai) // 2          
+7            if mang[giua] == tieu_chau:
+8                return giua
+9            elif mang[giua] < tieu_chau:
+10                trai = giua + 1
+11            else:
+12                phai = giua - 1           
+13        return trai
