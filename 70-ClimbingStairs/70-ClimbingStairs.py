@@ -1,12 +1,12 @@
-# Last updated: 5/15/2026, 10:10:26 AM
+# Last updated: 5/15/2026, 10:10:35 AM
 1class Solution(object):
-2    def deleteDuplicates(self, head):
-3        hien_tai = head
-4        while hien_tai and hien_tai.next:
-5            if hien_tai.val == hien_tai.next.val:
-6                # Bỏ qua nút kế tiếp nếu nó trùng giá trị
-7                hien_tai.next = hien_tai.next.next
-8            else:
-9                # Di chuyển sang nút tiếp theo nếu không trùng
-10                hien_tai = hien_tai.next         
-11        return head
+2    def climbStairs(self, n):
+3        if n <= 2:
+4            return n    
+5        truoc_2 = 1 # Bậc n-2
+6        truoc_1 = 2 # Bậc n-1
+7        for i in range(3, n + 1):
+8            hien_tai = truoc_1 + truoc_2
+9            truoc_2 = truoc_1
+10            truoc_1 = hien_tai
+11        return truoc_1
