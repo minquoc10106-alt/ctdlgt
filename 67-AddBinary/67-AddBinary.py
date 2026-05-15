@@ -1,17 +1,18 @@
-# Last updated: 5/15/2026, 10:09:41 AM
+# Last updated: 5/15/2026, 10:09:52 AM
 1class Solution(object):
-2    def mySqrt(self, x):
-3        if x < 2:
-4            return x 
-5        trai = 2
-6        phai = x // 2   
-7        while trai <= phai:
-8            giua = (trai + phai) // 2
-9            binh_phuong = giua * giua         
-10            if binh_phuong == x:
-11                return giua
-12            elif binh_phuong < x:
-13                trai = giua + 1
-14            else:
-15                phai = giua - 1      
-16        return phai
+2    def addBinary(self, a, b):
+3        kq = []
+4        nho = 0
+5        i = len(a) - 1
+6        j = len(b) - 1
+7        while i >= 0 or j >= 0 or nho:
+8            tong = nho
+9            if i >= 0:
+10                tong += int(a[i])
+11                i -= 1
+12            if j >= 0:
+13                tong += int(b[j])
+14                j -= 1
+15            kq.append(str(tong % 2))
+16            nho = tong // 2 
+17        return "".join(reversed(kq))
